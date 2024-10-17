@@ -54,7 +54,7 @@ public class BoardController {
 
     @PostMapping("/modify")
     //모디파이 페이지에 오면 이 밑에꺼를 쓰겠다는거임
-    public String modiftPost(BoardDTO boardDTO) {
+    public String modifyPost(BoardDTO boardDTO) {
         //이게 찐 수정해주는 거임
         //, RedirectAttributes redirectAttributes 이거는 내가 이동하는 페이지, 예를 들어서 지금 read로 가는데,
         //read에 값을 전달하는게 있으면 그때 쓰는거임. 지금은 수정하면서 read에 값을 가져가는게 아니고
