@@ -7,4 +7,28 @@
     <select id="selectAll" resultType="BoardDTO">
         select * from tbl_board
     </select>
+
+    <select id="selectOne" resultType="BoardDTO">
+        select * from tbl_board where bno = #{bno}
+    </select>
+
+    <insert id="insert">
+        insert into tbl_board(title, content, writer) values (#{title}, #{content}, #{writer})
+    </insert>
+<!--    insert는 왜 반환값이 없을까?-->
+
+    <update id="update">
+        update tbl_board set title = #{title}, content = #{content}, writer = #{writer} where bno = #{bno}
+    </update>
+<!--    = #{bno} 가, 이 번호인거를 골라서 바꾸겠다는거네-->
+
+    <delete id="delete">
+        delete from tbl_board where bno = #{bno}
+    </delete>
+
+    <update id="visitCountUpdate">
+        update tbl_board set visitcount = visitcount+1 where bno = #{bno}
+    </update>
+<!--    한번 불러줄때마다 1 증가시키면 되겠네-->
+<!--만약 visit카운트가 안올간다면? 코드 다 확인 잘했는데도 안되면 데이터베이스에서 디폴트값이 null일 수 있음-->
 </mapper>

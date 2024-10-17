@@ -9,7 +9,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-<%@include file="../includes/header.jsp"%>
+<%@include file="includes/header.jsp"%>
 
 <div class="row-content">
     <div class="card">
@@ -17,12 +17,13 @@
             Featured
         </div>
         <div class="card-body">
-            <h5 class="card-title">게시판 목록보기</h5>
+            <h5 class="card-title">Special title treatment</h5>
             <table class="table">
                 <thead>
                 <tr>
                     <th scope="col">Bno</th>
                     <th scope="col">Title</th>
+                    <th scope="col">Content</th>
                     <th scope="col">Writer</th>
                     <th scope="col">PostDate</th>
                     <th scope="col">VisitCount</th>
@@ -32,7 +33,9 @@
                 <c:forEach items="${boardList}" var="dto">
                     <tr>
                         <th scope="row">${dto.bno}</th>
-                        <td><a href="/board/read?bno=${dto.bno}" class="text-decoration-none" data-bno="${dto.bno}">${dto.title}</a></td>
+<%--                        <td><a href="/board/read?bno=${dto.bno}">${dto.title}</a></td>--%>
+                        <td>${dto.title}</td>
+                        <td>${dto.content}</td>
                         <td>${dto.writer}</td>
                         <td>${dto.postdate}</td>
                         <td>${dto.visitcount}</td>
@@ -44,5 +47,5 @@
         </div>
     </div>
 </div>
-<%@include file="../includes/footer.jsp"%>
+<%@include file="includes/footer.jsp"%>
 
